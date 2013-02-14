@@ -1,4 +1,7 @@
 function instantiateCkEditor(partIndex){
+  // Fixes parts with underscores or spaces in the name
+  partIndex = partIndex.replace(/(_| )/g,'-');
+  
 	CKEDITOR.config.startupOutlineBlocks = true
 	CKEDITOR.config.colorButton_enableMore = false
 	CKEDITOR.config.protectedSource.push( /<r:([\S]+)*>.*<\/r:\1>/g )
